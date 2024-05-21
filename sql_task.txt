@@ -1,0 +1,130 @@
+/* task1)
+İlk olaraq satışı reallaşmış məhsullar üçün bir cədvəl (tabel) 
+yaradırıq və bu cədvəlimizin sütun olaraq məhsul idsi, sayı və
+dəyəri (1 dənəsinin)  olacaq. Biz isə hər məhsul 
+üçün ümumi olan qazancı gətirib sıralamaq lazımdır
+*/
+
+/*
+CREATE TABLE PRODUCTS(
+    PRODUCT_ID NUMBER,
+    PRODUCT_NAME VARCHAR(20),
+    COUNT NUMBER,
+    PRICE NUMBER
+);
+
+INSERT INTO PRODUCTS 
+VALUES(1, 'Milk', 15, 2);
+
+INSERT INTO PRODUCTS 
+VALUES (2, 'Chocolate', 20, 3);
+
+INSERT INTO PRODUCTS 
+VALUES(3, 'Strawberry', 35, 4.5);
+
+INSERT INTO PRODUCTS 
+VALUES(4, 'Banana', 30, 3.4) ;
+
+INSERT INTO PRODUCTS 
+VALUES(5, 'Coffee', 24, 1.4) ; 
+
+SELECT PRODUCT_NAME, COUNT * PRICE AS TOTAL_PRICE FROM PRODUCTS */
+
+
+-- ______________________________________________________________________
+
+
+/*
+task2)
+işçilər adında cədvəlimiz olacaq. Sütun olaraq ad,maaş,
+departament olacaq. Siz isə departamentinin adı satış olan 
+və maaşı 600-dən çox olan şəxslərin maaşını azalan sıra ilə 
+sıralıyın
+*/
+/*
+CREATE TABLE EMPLOYEES(
+    NAME VARCHAR(20),
+    SALARY NUMBER,
+    DEPARTMENT VARCHAR(20)
+);
+
+INSERT INTO EMPLOYEES
+VALUES('Sakina', 2500, 'Marketing');
+
+INSERT INTO EMPLOYEES
+VALUES('Dilshad', 9500, 'IT');
+
+INSERT INTO EMPLOYEES
+VALUES('OMAR', 800, 'HR'); 
+
+INSERT INTO EMPLOYEES
+VALUES('Hidayat', 1500, 'Marketing');
+
+INSERT INTO EMPLOYEES
+VALUES('Sakina', 5100, 'Marketing');
+
+INSERT INTO EMPLOYEES
+VALUES('Asiman', 3900, 'Marketing'); 
+
+INSERT INTO EMPLOYEES
+VALUES('Zakir', 500, 'Marketing');
+ 
+SELECT NAME, SALARY FROM EMPLOYEES WHERE DEPARTMENT = 'Marketing' AND SALARY > 600 ORDER BY SALARY DESC;  */
+
+--_____________________________________________________________
+
+/*
+task3)
+kitablar cədvəlimiz olacaq. Sütunları: adı, janrı, nəşr ili
+.2015-dən sonra nəşr olunmuş kitbaabları janrına görə artan
+sıra ilə sıralıyın
+*/
+
+/*
+CREATE TABLE BOOKS(
+    NAME VARCHAR(50),
+    GENRE VARCHAR(45),
+    PUBLISHED_YEAR NUMBER(4)
+); 
+
+INSERT INTO BOOKS VALUES ('Educated', ' Education', 2018 );
+INSERT INTO BOOKS VALUES ('Pride and Prejudice', 'Romance', 1813 );
+INSERT INTO BOOKS VALUES ('When Breath Becomes Air', 'Medical Ethics', 2016 );
+INSERT INTO BOOKS VALUES ('The Three Musketeers', 'Historical Adventure', 1844 );
+INSERT INTO BOOKS VALUES ('The Testaments', 'Speculative Fiction', 2019 );
+
+
+SELECT * FROM BOOKS WHERE PUBLISHED_YEAR > 2015 ORDER BY GENRE DESC;
+*/
+
+--_________________________________________________________________
+
+/*
+task4)
+filmlər adlı cədvəlimiz olacaq. Sütunları : ad, çıxış tarixi,
+ratinq. Çıxış tarixi 2000-dən kiçik olanları artan sıra və 
+ratingi 7-dən böyük olanları azalan sıra ilə sıralıyın
+*/
+/*
+CREATE TABLE FILMS(
+    NAME VARCHAR(30),
+    RELEASE_DATE DATE,
+    RATING NUMBER(3)
+);
+
+
+INSERT INTO FILMS VALUES('Avatar',  TO_DATE('2009-11-22', 'YYYY-MM-DD'), 7.8);
+INSERT INTO FILMS VALUES('Interstellar', TO_DATE('2014-11-22', 'YYYY-MM-DD'), 9.6);
+INSERT INTO FILMS VALUES('Pride and Prejudice ',  TO_DATE('2015-11-22', 'YYYY-MM-DD'), 7.9);
+INSERT INTO FILMS VALUES('Little Forest ',  TO_DATE('2018-11-22', 'YYYY-MM-DD'), 7.1);
+INSERT INTO FILMS VALUES('Haywire',  TO_DATE('2011-11-22', 'YYYY-MM-DD'), 5.8);
+INSERT INTO FILMS VALUES('Casablanca',  TO_DATE('1942-11-22', 'YYYY-MM-DD'), 8.5);
+INSERT INTO FILMS VALUES('Citizen Kane',  TO_DATE('1942-11-22', 'YYYY-MM-DD'), 8.3); 
+INSERT INTO FILMS VALUES('Star Wars: A New Hope',  TO_DATE('1977-11-22', 'YYYY-MM-DD'), 8.6); 
+
+SELECT * FROM FILMS WHERE EXTRACT(YEAR FROM RELEASE_DATE) < 2000 ORDER BY RELEASE_DATE; 
+SELECT * FROM FILMS WHERE RATING > 7 ORDER BY RATING DESC;  */
+
+
+
+
